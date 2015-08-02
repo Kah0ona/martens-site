@@ -18,7 +18,9 @@
   (GET "/" [] (page home/home-data))
   (GET "/blog" [] (page blog/blog-data))
   (GET "/blog/:id" [id] (let [post (blog/single-post id)]
-                          (if post (page post))))
+                          (if post (page {
+                                           :title (:title post)
+                                           :body (blog/blog-post post)}))))
   (GET "/portfolio" [] (page portfolio/portfolio-data))
   (GET "/contact" [] (fw-page contact/contact-data))) 
 

@@ -5,6 +5,7 @@
             [hiccup.middleware :refer [wrap-base-url]]
             [compojure.handler :as handler]
             [compojure.route :as route]
+            [martens-site.routes.routes :as mainroutes]
             [martens-site.routes.routes :refer [site-routes]])) 
 
 (defn init []
@@ -15,7 +16,11 @@
 
 (defroutes app-routes
   (route/resources "/")
-  (route/not-found "Not Found"))
+  (route/not-found (mainroutes/page {:title "Oops, Not Found"
+                                     :body 
+                                      [:div 
+                                        [ :h1 "Oops, not found"]
+                                        [ :p "Sorry, the page you are looking for could not be found."]]})))
 
 (def app
   (-> (routes site-routes app-routes)
