@@ -1,0 +1,38 @@
+(+ 1 2)
+d
+(use 'martens-site.repl)
+blogpost-filenames
+(blogpost-filenames)
+(use 'martens-site.posts.blog)
+blogpost-filenames
+(print blogpost-filenames)
+(x)
+x
+(print x)
+(print blog/x)
+(print x)
+(blogposts)
+blogpost-filenames
+(.list (io/file "/blogposts"))
+(use 'martens-site.posts.blog)
+(use 'clojure.java.io as io)
+(use 'clojure.java.io :as io)
+(use 'clojure.java.io)
+blogpost-filenames
+(.list (io/file "/blogposts"))
+(.list (io/file "xx"))
+(use 'clojure.java.io)
+(.list (io/file "xx"))
+(map parsepost (blogpost-filenames))
+(parsepost "helloworld.txt")
+(parsepost "hello_world.txt")
+(pop (pop ["Some Title" "2015-01-01" "" "bla b" "a" "as" "f" "asd" "f" "as" "f" "asfa"]))
+(rest (rest ["Some Title" "2015-01-01" "" "bla b" "a" "as" "f" "asd" "f" "as" "f" "asfa"]))
+(filter #(fn [slug] (= slug "ab")) ["a", "b"])
+] (= slug "ab")) ["a", "b"])
+(blog/single-post "asdfa")
+(use 'martens-site.posts.blog)
+(blog/single-post "asdfa")
+(single-post "asdfa")
+(single-post "hello_world.txt")
+(single-post "hello_worldasd")
